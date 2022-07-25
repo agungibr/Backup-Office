@@ -19,7 +19,7 @@
                     <div class="pl-lg-4">
                         <div class="form-group{{ $errors->has('tanggal') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-date">{{ __('Tanggal') }}</label>
-                            <input type="date" name="tanggal" id="input-date" class="form-control form-control-alternative{{ $errors->has('tanggal') ? ' is-invalid' : '' }}" placeholder="D/m/Y" value="{{ old('tanggal') }}>
+                            <input type="date" name="tanggal" id="input-date" class="form-control form-control-alternative{{ $errors->has('tanggal') ? ' is-invalid' : '' }}" placeholder="D/m/Y" value="{{ old('tanggal') }}">
                             @if ($errors->has('tanggal'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('tanggal') }}</strong>

@@ -85,7 +85,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('kas.index') }}">
-                        <i class="ni ni-archive-2"></i> {{ __('Kas') }}
+                        <i class="fas fa-chart-bar"></i> {{ __('Kas') }}
                     </a>
                 </li>
                 <li class="nav-item ">
@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                    <a class="nav-link" href="{{ route('register') }}">
                         <i class="ni ni-circle-08"></i> {{ __('Register') }}
                     </a>
                 </li>

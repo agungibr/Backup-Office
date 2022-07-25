@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Karyawan;
+use App\Models\Kas;
+use App\Models\Laptop;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $karyawan = Karyawan::count();
+        $laptop = Laptop::count();
+        $kas = Kas::count();
+        
+        return view('dashboard', compact('karyawan', 'laptop', 'kas'));
     }
 }
