@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('tglambil') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-date">{{ __('Tanggal Ambil') }}</label>
-                            <input type="date" name="tglambil" id="input-date" class="form-control form-control-alternative{{ $errors->has('tglambil') ? ' is-invalid' : '' }}" placeholder="D/m/Y" value="{{ old('tglambil') }}>
+                            <input type="date" name="tglambil" id="input-date" class="form-control form-control-alternative{{ $errors->has('tglambil') ? ' is-invalid' : '' }}" placeholder="D/m/Y" value="{{ old('tglambil') }}">
                             @if ($errors->has('tglambil'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('tglambil') }}</strong>

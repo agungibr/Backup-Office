@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('tglambil');
             $table->string('merk');
             $table->string('serialnumber');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }

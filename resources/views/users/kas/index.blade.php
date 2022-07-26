@@ -34,15 +34,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  
                                     @foreach ($data as $p => $dataKas)
                                     <tr>
                                         <td>{{ $p + 1 }}</td>
                                         <td>{{ $dataKas->tanggal }}</td>
-                                        <td>Rp{{ $dataKas->pemasukan }}</td>
-                                        <td>Cash</td>
-                                        <td>Rp{{ $dataKas->pengeluaran }}</td>
+                                        <td>Rp {{ $dataKas->pemasukan }}</td>
+                                        <td>{{ $dataKas->pembayaran }}</td>
+                                        <td>Rp {{ $dataKas->pengeluaran }}</td>
                                         <td>{{ $dataKas->notes }}</td>
-                                        <td>Rp{{ $dataKas->pemasukan - $dataKas->pengeluaran }}</td>
+                                        <td>Rp {{ $dataKas->pemasukan }}</td>
                                         <td>
                                             <a href="{{url('/showkas/'.$dataKas->id)}}"><i class="far fa-edit" style="color:green"></i></a>
                                             <a href="#"> <i type="button" class="fas fa-trash-alt" style="color:red" data-toggle="modal" data-target="#exampleModal"></i></a>
@@ -68,6 +69,7 @@
                                               </div>
                                         </td>
                                     </tr>
+                                    
                                     @endforeach
                                 </tbody>
                             </table>

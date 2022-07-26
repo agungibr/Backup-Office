@@ -26,7 +26,6 @@ class KasRequest extends FormRequest
         return [
             'tanggal'=>'required',
             'pemasukan'=>'required',
-            'pengeluaran'=>'required'
         ];
     }
 }

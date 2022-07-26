@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('kas', function (Blueprint $table) {
             $table->id();
             $table->string('tanggal');
-            $table->string('pemasukan');
+            $table->integer('pemasukan')->nullable();
             $table->string('pembayaran')->nullable();
-            $table->string('pengeluaran');
+            $table->integer('pengeluaran')->nullable();
             $table->string('notes')->nullable();
-            $table->string('saldo')->nullable();
+            $table->integer('saldo')->nullable();
             $table->timestamps();
         });
     }
