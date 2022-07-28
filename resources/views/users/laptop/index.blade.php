@@ -38,8 +38,8 @@
                                         <td>{{ $p + 1 }}</td>
                                         <td>{{ $dataLaptop->nama }}</td>
                                         <td>{{ $dataLaptop->tglambil }}</td>
-                                        <td>{{ $dataLaptop->merk }}</td>
                                         <td>{{ $dataLaptop->serialnumber }}</td>
+                                        <td>{{ $dataLaptop->merk }}</td>
                                         <td>{{ $dataLaptop->notes }}</td>
                                         <td>
                                             <a href="{{url('/showlaptop/'.$dataLaptop->id)}}"><i class="far fa-edit" style="color:green"></i></a>

@@ -6,7 +6,8 @@
             <div class="header-body text-center mt-7 mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">{{ __('Welcome to PT. Villanet Banyukarta Selaras.') }}</h1>
+                        <h1 class="text-white">{{ __('Welcome to') }}</h1>
+                        <h1 class="text-white">{{ __('PT. Villanet Banyukarta Selaras') }}</h1>
                     </div>
                 </div>
             </div>

@@ -8,14 +8,12 @@
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-3">
-                        <div class="text-muted text-center mt-4 mb-2">{{ __('Log In') }}</div>
+                        <div class="text-muted text-center mt-4 mb-2">
+                            <b>{{ __('Please Log in with your account :') }}</b>
+                        </div>
                     </div>
                     <div class="card-body px-lg-5 ">
-                        <div class="text-center text-muted mb-4">
-                            <small>
-                                    Please Log in with your account :
-                            </small>
-                        </div>
+
                         <form role="form" method="POST" action="{{ route('login') }}">
                             @csrf
 

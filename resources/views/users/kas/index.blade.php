@@ -10,6 +10,7 @@
             <div class="col-lg-6">
                 <a href="{{url('createkas')}}" class="btn btn-sm btn-neutral">New</a>
             </div>
+            
         </div>
       </div>
     </div>

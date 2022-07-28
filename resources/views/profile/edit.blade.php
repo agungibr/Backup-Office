@@ -23,6 +23,10 @@
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Password') }}</h6>
 
+                            @if (session()->has('message1'))
+                                <div class="text-green-600 mb-4">{{ session()->get('message1') }}</div>
+                            @endif
+
                             @if (session('password_status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('password_status') }}
@@ -73,12 +77,18 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                        <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" autocomplete="off">
+
                             @csrf
-                            @method('put')
+
+                            @method("put")
 
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
-                            
+
+                            @if (session()->has('message'))
+                                <div class="text-green-600 mb-4">{{ session()->get('message') }}</div>
+                            @endif
+
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('status') }}
