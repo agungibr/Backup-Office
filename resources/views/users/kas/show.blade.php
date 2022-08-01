@@ -37,7 +37,11 @@
                         </div>
                         <div class="form-group{{ $errors->has('pembayaran') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-pembayaran">{{ __('Pembayaran') }}</label>
-                            <input type="text" name="pembayaran" id="input-pembayaran" class="form-control form-control-alternative{{ $errors->has('pembayaran') ? ' is-invalid' : '' }}" placeholder="Pembayaran" value="Cash" readonly>
+                            <select type="text" name="pembayaran" id="input-pembayaran" class="form-control form-control-alternative{{ $errors->has('pembayaran') ? ' is-invalid' : '' }}" placeholder="Pembayaran" value="Cash">
+                                <option value="#">{{ $data->pembayaran }}</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Transfer">Transfer</option>
+                            </select>
                             @if ($errors->has('pembayaran'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('pembayaran') }}</strong>

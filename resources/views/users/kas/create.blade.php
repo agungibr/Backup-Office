@@ -39,7 +39,7 @@
                             <label class="form-control-label" for="input-pembayaran">{{ __('Pembayaran') }}</label>
                             <select type="text" name="pembayaran" id="input-pembayaran" class="form-control form-control-alternative{{ $errors->has('pembayaran') ? ' is-invalid' : '' }}" placeholder="Pembayaran">
                                 <option value="Cash">Cash</option>
-                                <option value="Transfer">Transfer Bank</option>
+                                <option value="Transfer">Transfer</option>
                             </select>
                             @if ($errors->has('pembayaran'))
                                 <span class="invalid-feedback" role="alert">
