@@ -10,7 +10,6 @@
             <div class="col-lg-6">
                 <a href="{{url('createkas')}}" class="btn btn-sm btn-neutral">New</a>
             </div>
-            
         </div>
       </div>
     </div>
@@ -47,34 +46,21 @@
                                         <td>Rp. {{ $dataKas->pemasukan - $dataKas->pengeluaran }}</td>
                                         <td>
                                             <a href="{{url('/showkas/'.$dataKas->id)}}"><i class="far fa-edit" style="color:green"></i></a>
-                                            <a href="#"> <i type="button" class="fas fa-trash-alt" style="color:red" data-toggle="modal" data-target="#exampleModal"></i></a>
-                                            
-                                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
-                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                      </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Are you sure you want to delete this data?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                      <a href="{{url('/destroykas/'.$dataKas->id)}}"><button type="button" class="btn btn-primary">Delete</button></a>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
+                                            <a href="{{url('/destroykas/'.$dataKas->id)}}" onclick="return myFunction();"><i type="button" class="fas fa-trash-alt" style="color:red"></i></a>
+                                            <script>
+                                              function myFunction() {
+                                                  if(!confirm("Are you sure you want to delete this data ?"))
+                                                  event.preventDefault();
+                                              }
+                                             </script>
                                         </td>
                                     </tr>
-                                    
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $data->links() }}
+                            <div class="d-flex justify-content">
+                              {{ $data->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

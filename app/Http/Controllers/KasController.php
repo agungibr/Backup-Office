@@ -90,7 +90,7 @@ class KasController extends Controller
      */
     public function destroykas($id)
     {
-        $data = Kas::findOrFail($id);
+        $data = Kas::find($id);
         $data->delete();
 
         return redirect()->route('kas.index');
