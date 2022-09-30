@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string('pembayaran')->nullable();
             $table->integer('pengeluaran')->nullable();
             $table->string('notes')->nullable();
-            $table->integer('saldo')->nullable();
             $table->timestamps();
         });
+
+        
     }
 
     /**

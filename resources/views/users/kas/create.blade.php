@@ -16,7 +16,7 @@
                 <form action="{{url('storekas')}}" method="post" enctype="multipart/form-data" autocomplete="on">
                     @csrf
                     <h6 class="heading-small text-muted mb-4">{{ __('Kas Kantor') }}</h6>
-                    <div class="pl-lg-4">
+                    
                         <div class="form-group{{ $errors->has('tanggal') ? ' has-danger' : '' }}">
                             <label class="form-control-label" for="input-date">{{ __('Tanggal') }}</label>
                             <input type="date" name="tanggal" id="input-date" class="form-control form-control-alternative{{ $errors->has('tanggal') ? ' is-invalid' : '' }}" placeholder="D/m/Y" value="{{ old('tanggal') }}">
@@ -66,8 +66,8 @@
                             @endif
                         </div>
                         {{-- <div class="form-group{{ $errors->has('saldo') ? ' has-danger' : '' }}">
-                            <label class="form-control-label" for="input-saldo">{{ __('Saldo') }}</label>
-                            <input type="text" name="saldo" id="input-saldo" class="form-control form-control-alternative{{ $errors->has('saldo') ? ' is-invalid' : '' }}" placeholder="Saldo" value="{{ old('saldo') }}">
+                            <label class="form-control-label" for="input-saldo">{{ __('Saldo Kas') }}</label>
+                            <input type="text" name="saldo" id="input-saldo" class="form-control form-control-alternative{{ $errors->has('saldo') ? ' is-invalid' : '' }}" placeholder="Saldo Kas" value="{{ old('saldo') }}" readonly>
                             @if ($errors->has('saldo'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('saldo') }}</strong>

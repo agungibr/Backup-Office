@@ -15,7 +15,7 @@ class KasController extends Controller
      */
     public function indexkas()
     {
-        $data = Kas::paginate(5);
+        $data = Kas::paginate(20);
         return view('users/kas/index', compact('data'));
     }
 

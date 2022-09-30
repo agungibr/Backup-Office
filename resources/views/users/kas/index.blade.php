@@ -4,8 +4,29 @@
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-6">
+            
             <div class="col-lg-8">
                 <h6 class="h1 text-white d-inline-block mb-0">Data Kas Kantor</h6>
+            </div>
+            <div class="col-lg-9">
+                <?php
+          
+                                            $koneksi = mysqli_connect("localhost", "root", "", "villanet");
+                                            $pemasukan = mysqli_query($koneksi, 'SELECT sum(pemasukan) as pemasukan from kas');
+                                            $row = mysqli_fetch_array($pemasukan);
+                                            $sum = $row['pemasukan'];
+
+
+                                            $pengeluaran = mysqli_query($koneksi, 'SELECT sum(pengeluaran) as pengeluaran from kas');
+                                            $row2 = mysqli_fetch_array($pengeluaran);
+                                            $min = $row2['pengeluaran'];
+
+                                            $saldo = $sum - $min;
+                                        ?>
+                                    <tr>
+                                        <td><h6 class="h1 text-white text-center font-italic">Saldo Kas Rp. <?php echo $saldo; ?></h6></td>
+                                    </tr>
+                                        <?php?>
             </div>
             <div class="col-lg-6">
                 <a href="{{url('createkas')}}" class="btn btn-sm btn-neutral">New</a>
@@ -44,6 +65,7 @@
                                         <td>Rp. {{ $dataKas->pengeluaran }}</td>
                                         <td>{{ $dataKas->notes }}</td>
                                         <td>Rp. {{ $dataKas->pemasukan - $dataKas->pengeluaran }}</td>
+                                        
                                         <td>
                                             <a href="{{url('/showkas/'.$dataKas->id)}}"><i class="far fa-edit" style="color:green"></i></a>
                                             <a href="{{url('/destroykas/'.$dataKas->id)}}" onclick="return myFunction();"><i type="button" class="fas fa-trash-alt" style="color:red"></i></a>
