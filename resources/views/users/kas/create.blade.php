@@ -65,15 +65,6 @@
                                 </span>
                             @endif
                         </div>
-                        {{-- <div class="form-group{{ $errors->has('saldo') ? ' has-danger' : '' }}">
-                            <label class="form-control-label" for="input-saldo">{{ __('Saldo Kas') }}</label>
-                            <input type="text" name="saldo" id="input-saldo" class="form-control form-control-alternative{{ $errors->has('saldo') ? ' is-invalid' : '' }}" placeholder="Saldo Kas" value="{{ old('saldo') }}" readonly>
-                            @if ($errors->has('saldo'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('saldo') }}</strong>
-                                </span>
-                            @endif
-                        </div> --}}
 
                         <div class="text-center">
                             <a class="btn btn-success mt-4" href="{{url('/indexkas')}}" role="button" aria-expanded="false" aria-controls="collapseExample">Back</a>

@@ -8,26 +8,6 @@
             <div class="col-lg-8">
                 <h6 class="h1 text-white d-inline-block mb-0">Data Kas Kantor</h6>
             </div>
-            <div class="col-lg-9">
-                <?php
-          
-                                            $koneksi = mysqli_connect("localhost", "root", "", "villanet");
-                                            $pemasukan = mysqli_query($koneksi, 'SELECT sum(pemasukan) as pemasukan from kas');
-                                            $row = mysqli_fetch_array($pemasukan);
-                                            $sum = $row['pemasukan'];
-
-
-                                            $pengeluaran = mysqli_query($koneksi, 'SELECT sum(pengeluaran) as pengeluaran from kas');
-                                            $row2 = mysqli_fetch_array($pengeluaran);
-                                            $min = $row2['pengeluaran'];
-
-                                            $saldo = $sum - $min;
-                                        ?>
-                                    <tr>
-                                        <td><h6 class="h1 text-white text-center font-italic">Saldo Kas Rp. <?php echo $saldo; ?></h6></td>
-                                    </tr>
-                                        <?php?>
-            </div>
             <div class="col-lg-6">
                 <a href="{{url('createkas')}}" class="btn btn-sm btn-neutral">New</a>
             </div>
@@ -60,11 +40,11 @@
                                     <tr>
                                         <td>{{ $p + 1 }}</td>
                                         <td>{{ $dataKas->tanggal }}</td>
-                                        <td>Rp. {{ $dataKas->pemasukan }}</td>
+                                        <td>Rp{{ number_format($dataKas->pemasukan, 0, ',', '.') }}</td>
                                         <td>{{ $dataKas->pembayaran }}</td>
-                                        <td>Rp. {{ $dataKas->pengeluaran }}</td>
+                                        <td>Rp{{ number_format($dataKas->pengeluaran, 0, ',', '.') }}</td>
                                         <td>{{ $dataKas->notes }}</td>
-                                        <td>Rp. {{ $dataKas->pemasukan - $dataKas->pengeluaran }}</td>
+                                        <td>Rp{{ number_format($dataKas->pemasukan - $dataKas->pengeluaran, 0, ',', '.') }}</td>
                                         
                                         <td>
                                             <a href="{{url('/showkas/'.$dataKas->id)}}"><i class="far fa-edit" style="color:green"></i></a>
